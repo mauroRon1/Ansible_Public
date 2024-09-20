@@ -1,5 +1,6 @@
-- name: run show version on switch
+- name: Hello World Sample
   hosts: all
-  cli_command:
-    command: show version
-  register: show
+  tasks:
+    - name: Hello Message
+      debug:
+        msg: "Hello World!"
