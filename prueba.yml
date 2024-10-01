@@ -1,12 +1,30 @@
-- name: Bajar puerto de switch Cisco
+---
+- name: Basic Web Server Setup
+  hosts: web_servers
+  become: yes  # Utiliza sudo para las tareas que lo requieren
   tasks:
-    - name: Bajar la interfaz de un switch Cisco
-      ios_interface:
-        config:
-          - name: GigabitEthernet1/0/1  # Cambia por el puerto que deseas bajar
-            enabled: true
-      register: result
 
-    - name: Mostrar resultado
-      debug:
-        var: result
+    - name: Update apt package index
+      apt:
+        update_cache: yes
+
+    - name: Install Apache
+      apt:
+        name: apache2
+        state: present
+
+    - name: Start Apache service
+      service:
+        name: apache2
+        state: started
+        enabled: yes
+
+    - name: Copy index.html to web server
+      copy:
+        src: /path/to/local/index.html  # Ruta local del archivo
+        dest: /var/www/html/index.html   # Ruta en el servidor
+
+    - name: Ensure firewall allows HTTP traffic
+      ufw:
+        rule: allow
+        name: 'Apache Full'
