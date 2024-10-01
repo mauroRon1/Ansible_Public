@@ -1,30 +1,14 @@
 ---
-- name: Basic Web Server Setup
-  hosts: web_servers
-  become: yes  # Utiliza sudo para las tareas que lo requieren
+- name: Bajar puerto de switch Cisco
+  hosts: Switches
+  gather_facts: no
   tasks:
+    - name: Bajar puerto de la interfaz
+      ios_interface:
+        name: "GigabitEthernet1/0/1"  # Cambia esto por el puerto que deseas bajar
+        enabled: false
+      register: result
 
-    - name: Update apt package index
-      apt:
-        update_cache: yes
-
-    - name: Install Apache
-      apt:
-        name: apache2
-        state: present
-
-    - name: Start Apache service
-      service:
-        name: apache2
-        state: started
-        enabled: yes
-
-    - name: Copy index.html to web server
-      copy:
-        src: /path/to/local/index.html  # Ruta local del archivo
-        dest: /var/www/html/index.html   # Ruta en el servidor
-
-    - name: Ensure firewall allows HTTP traffic
-      ufw:
-        rule: allow
-        name: 'Apache Full'
+    - name: Mostrar resultado
+      debug:
+        var: result
