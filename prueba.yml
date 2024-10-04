@@ -5,7 +5,7 @@
   tasks:
     - name: Bajar puerto de la interfaz
       ios_interface:
-        name: "GigabitEthernet1/0/1"  # Cambia esto por el puerto que deseas bajar
+        name: "GigabitEthernet1/0/2"  # Cambia esto por el puerto que deseas bajar
         enabled: true
       register: result
 
