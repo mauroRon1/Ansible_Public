@@ -6,6 +6,7 @@
     - name: Bajar puerto de la interfaz
       ios_command:
         commands: interface "{{puerto}}"
+        commands: shutdown
       register: result
       
     - name: Mostrar resultado
