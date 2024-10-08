@@ -5,7 +5,8 @@
   tasks:
     - name: Bajar puerto de la interfaz
       ios_command:
-        commands: 
+        commands:
+        - configure terminal
         - interface Gi 1/0/1
         - shutdown
       register: result
