@@ -13,12 +13,9 @@
       debug:
         var: result
 
-    - name: Subir puerto de la interfaz
-      ios_interface:
-        name: "{{puerto}}" 
-        enabled: true
-      register: result
+    #- name: Subir puerto de la interfaz
+      #ios_interface:
+        #name: "{{puerto}}" 
+        #enabled: true
+      #register: result
       
-    - name: Mostrar resultado
-      debug:
-        var: result
