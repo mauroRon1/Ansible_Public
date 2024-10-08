@@ -7,7 +7,7 @@
       ios_command:
         commands:
         - configure terminal
-        - interface "{puerto}"
+        - interface "{{puerto}}"
         - shutdown
       register: result
       
