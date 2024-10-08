@@ -5,7 +5,7 @@
   tasks:
     - name: Bajar puerto de la interfaz
       ios_command:
-        commands: show version
+        commands: interface "{{puerto}}"
       register: result
       
     - name: Mostrar resultado
