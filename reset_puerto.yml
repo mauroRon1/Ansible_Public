@@ -6,7 +6,7 @@
     - name: Bajar puerto de la interfaz
       ios_interface:
         name: "{{puerto}}"  
-        enabled: yes
+        description: "Prueba"
       register: result
       
     - name: Mostrar resultado
