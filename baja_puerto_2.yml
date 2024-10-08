@@ -5,7 +5,7 @@
   tasks:
     - name: Bajar puerto de la interfaz
       ios_command:
-        commands: interface "{{puerto}}"
+        commands: interface Gi 1/0/1
         commands: shutdown
       register: result
       
