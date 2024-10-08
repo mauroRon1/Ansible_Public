@@ -1,0 +1,14 @@
+---
+- name: Bajar puerto de switch Cisco
+  hosts: Switches
+  gather_facts: no
+  tasks:
+    - name: Bajar puerto de la interfaz
+      ios_interface:
+        name: "GigabitEthernet1/0/2"  # Cambia esto por el puerto que deseas bajar
+        enabled: true
+      register: result
+
+    - name: Mostrar resultado
+      debug:
+        var: result
