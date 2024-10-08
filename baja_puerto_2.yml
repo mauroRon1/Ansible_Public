@@ -1,6 +1,6 @@
 ---
 - name: Reinicio puerto de switch Cisco
-  hosts: switches_rojo_1
+  hosts: switches_rojo
   gather_facts: no
   tasks:
     - name: Bajar puerto de la interfaz
