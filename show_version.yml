@@ -1,4 +1,4 @@
---
+---
 - name: Revision version switches
   hosts: switches_rojo
   gather_facts: no
