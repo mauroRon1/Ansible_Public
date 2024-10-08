@@ -1,0 +1,14 @@
+---
+- name: Bajar puerto de switch Cisco
+  hosts: Switches
+  gather_facts: no
+  tasks:
+    - name: Bajar puerto de la interfaz
+  ios_command
+      ios_command:
+      commands: show version
+      register: result
+      
+    - name: Mostrar resultado
+      debug:
+        var: result
