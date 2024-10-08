@@ -1,0 +1,21 @@
+---
+- name: Crear un host en el inventario
+  hosts: localhost
+  gather_facts: no
+  tasks:
+    - name: Agregar un host al inventario dinámico
+      ansible.builtin.add_host:
+        name: {{ item['nombre'] }}
+        groups: switches_rojo
+        ansible_host: {{ item['direccion'] }}
+        puerto: {{ item['puerto'] }}
+        loop: 
+          - nombre: switch_rojo_lago_agrio	
+            direccion: 172.18.2.4	
+            puerto: 1/0/13
+          - nombre: switch_rojo_lago_agrio_2	
+            direccion: 172.18.2.6	
+            puerto: 1/0/33
+    - name: Mostrar el inventario actualizado
+      debug:
+        var: groups
