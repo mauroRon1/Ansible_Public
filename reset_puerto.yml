@@ -13,7 +13,7 @@
       debug:
         var: result
 
-  - name: Subir puerto de la interfaz
+    - name: Subir puerto de la interfaz
       ios_interface:
         name: "{{puerto}}"  # Cambia esto por el puerto que deseas bajar
         enabled: true
