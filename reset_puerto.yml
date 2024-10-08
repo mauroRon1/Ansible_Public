@@ -1,7 +1,6 @@
 ---
 - name: Bajar puerto de switch Cisco
   hosts: Switches
-  puertos
   gather_facts: no
   tasks:
     - name: Bajar puerto de la interfaz
