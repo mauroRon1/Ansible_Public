@@ -1,0 +1,14 @@
+--
+- name: Revision version switches
+  hosts: switches_rojo
+  gather_facts: no
+  tasks:
+    - name: Ejecutar comando show version
+      ios_command:
+        commands:
+        - show version
+      register: result
+
+    - name: Mostrar resultado_bajada
+      debug:
+        var: result
