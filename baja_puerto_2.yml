@@ -5,10 +5,9 @@
   tasks:
     - name: Bajar puerto de la interfaz
       ios_command:
-        commands: interface Gi 1/0/1
-    - name: Bajar puerto de la interfaz 2
-      ios_command:
-        commands: shutdown
+        commands: 
+        - interface Gi 1/0/1
+        - shutdown
       register: result
       
     - name: Mostrar resultado
