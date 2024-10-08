@@ -6,7 +6,7 @@
   tasks:
     - name: Bajar puerto de la interfaz
       ios_interface:
-        name = puerto  # Cambia esto por el puerto que deseas bajar
+        name: puerto  # Cambia esto por el puerto que deseas bajar
         enabled: true
       register: result
 
