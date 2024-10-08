@@ -23,7 +23,10 @@
         - no shutdown   
       register: result1
       
-    - name: Mostrar resultado
+    - name: Mostrar resultado_bajada
       debug:
         var: result
+        
+    - name: Mostrar resultado_subida
+      debug:
         var: result1
