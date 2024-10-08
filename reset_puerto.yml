@@ -7,6 +7,7 @@
       ios_interface:
         name: "{{puerto}}"  
         description: "Prueba"
+        enable: false
       register: result
       
     - name: Mostrar resultado
