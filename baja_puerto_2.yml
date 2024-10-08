@@ -6,6 +6,7 @@
     - name: Bajar puerto de la interfaz
       ios_command:
         commands: interface Gi 1/0/1
+    - name: Bajar puerto de la interfaz 2
       ios_command:
         commands: shutdown
       register: result
