@@ -1,6 +1,6 @@
 ---
 - name: Revision version switches
-  hosts: switch_alpallana
+  hosts: switch_rojo_salado
   gather_facts: no
   tasks:
     - name: Ejecutar comando show version
