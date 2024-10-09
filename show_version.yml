@@ -1,6 +1,6 @@
 ---
 - name: Revision version switches
-  hosts: switches_rojo
+  hosts: switch_rojo_baeza
   gather_facts: no
   tasks:
     - name: Ejecutar comando show version
