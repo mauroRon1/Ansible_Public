@@ -1,6 +1,6 @@
 ---
 - name: Revision version switches
-  hosts: switch_rojo_lago_agrio_5
+  hosts: switch_rojo
   gather_facts: no
   tasks:
     - name: Ejecutar comando show version
