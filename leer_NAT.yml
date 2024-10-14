@@ -3,13 +3,13 @@
   hosts: palo_alto_firewalls
   gather_facts: no
   tasks:
-    - name: Obtener hechos del dispositivo
+    #- name: Obtener hechos del dispositivo
       #panos_facts:
         #provider:
           #host: "172.25.5.251"
           #username: "mdron"
           #password: "Benja.2031"
-      register: device_facts
+     # register: device_facts
 
     - name: Mostrar información de versión
       debug:
