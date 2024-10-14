@@ -4,17 +4,14 @@
   gather_facts: no
   tasks:
     - name: Exportar configuración NAT
-      panos_config:
+      panos_nat_rule_facts:
         provider:
           host: "172.25.5.251"
           username: "mdron"
           password: "Benja.2031"
-        config: "shared"
-        action: "export"
-        file_path: "/var/lib/awx/projects/nats.xml"
-        xpath: "/config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='vsys1']/nat"
-      register: nat_export
+        vsys: "vsys1"  # Nombre del contexto virtual
+      register: nat_rules
 
-    - name: Mostrar resultado de la exportación
+    - name: Mostrar información de las reglas NAT
       debug:
-        var: nat_export
+        var: nat_rules
