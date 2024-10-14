@@ -1,17 +1,16 @@
 ---
-- name: Exportar configuración NAT desde Palo Alto
+- name: Obtener información de versión del firewall Palo Alto
   hosts: palo_alto_firewalls
   gather_facts: no
   tasks:
-    - name: Exportar configuración NAT
-      panos_nat_rule_facts:
+    - name: Obtener hechos del dispositivo
+      panos_facts:
         provider:
           host: "172.25.5.251"
           username: "mdron"
           password: "Benja.2031"
-        vsys: "vsys1"  # Nombre del contexto virtual
-      register: nat_rules
+      register: device_facts
 
-    - name: Mostrar información de las reglas NAT
+    - name: Mostrar información de versión
       debug:
-        var: nat_rules
+        msg: "La versión del dispositivo es: {{ device_facts.version }}"
