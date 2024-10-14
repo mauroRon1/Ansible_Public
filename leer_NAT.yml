@@ -11,6 +11,6 @@
           #password: "Benja.2031"
      # register: device_facts
 
-    - name: Mostrar información de versión
-      debug:
-        msg: "La versión del dispositivo es: {{ device_facts.version }}"
+    #- name: Mostrar información de versión
+      #debug:
+        #msg: "La versión del dispositivo es: {{ device_facts.version }}"
