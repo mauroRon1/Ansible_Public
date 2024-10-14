@@ -9,6 +9,9 @@
           host: 172.25.5.251
           username: mdron
           password: Benja.2031
+          port: 443
+          protocol: "https"
+          validate_certs: false
       register: device_facts
 
     - name: Mostrar información de versión
