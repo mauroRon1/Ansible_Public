@@ -1,0 +1,20 @@
+---
+- name: Exportar configuración NAT desde Palo Alto
+  hosts: palo_alto_firewalls
+  gather_facts: no
+  tasks:
+    - name: Exportar configuración NAT
+      panos_config:
+        provider:
+          host: "172.25.5.251"
+          username: "mdron"
+          password: "Benja.2031"
+        config: "shared"
+        action: "export"
+        file_path: "/var/lib/awx/projects/nats.xml"
+        xpath: "/config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='vsys1']/nat"
+      register: nat_export
+
+    - name: Mostrar resultado de la exportación
+      debug:
+        var: nat_export
