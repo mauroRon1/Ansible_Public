@@ -6,9 +6,9 @@
     - name: Obtener hechos del dispositivo
       paloaltonetworks.panos.panos_facts:
         provider:
-          host: "172.25.5.251"
-          username: "mdron"
-          password: "Benja.2031"
+          host: 172.25.5.251
+          username: mdron
+          password: Benja.2031
       register: device_facts
 
     - name: Mostrar información de versión
