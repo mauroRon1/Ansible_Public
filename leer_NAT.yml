@@ -6,7 +6,7 @@
     - name: Obtener hechos del dispositivo
       paloaltonetworks.panos.panos_facts:
         provider:
-          host: 172.25.5.251
+          host: 10.96.10.30
           username: mdron
           password: Benja.2031
           port: 443
