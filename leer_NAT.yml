@@ -1,16 +1,16 @@
 ---
-- name: Obtener información de versión del firewall Palo Alto
-  hosts: palo_alto_firewalls
+- name: Obtener información del firewall Palo Alto
+  hosts: palo_alto_firewall
   gather_facts: no
   tasks:
-    - name: Obtener hechos del dispositivo
-      paloalto.panos.panos_op:
+    - name: Recoger hechos del firewall
+      paloalto.panos.panos_facts:
         provider:
           hostname: "10.96.10.30"
           username: "mdron"
           password: "Benja.2031"
-        cmd: "show system info"
-      register: system_info
-    - name: Mostrar información de versión
+      register: firewall_facts
+
+    - name: Mostrar versión de software
       debug:
-        msg: "La versión del dispositivo es: {{ device_facts.version }}"
+        msg: "La versión del firewall es: {{ firewall_facts.ansible_net_version }}"
