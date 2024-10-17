@@ -1,6 +1,6 @@
 ---
 - name: Obtener información del firewall Palo Alto
-  hosts: palo_alto_firewall
+  hosts: palo_alto_firewalls
   gather_facts: no
   tasks:
     - name: Recoger hechos del firewall
