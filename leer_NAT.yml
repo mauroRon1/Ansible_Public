@@ -4,7 +4,13 @@
   gather_facts: no
   tasks:
     - name: Obtener hechos del dispositivo
-      #paloaltonetworks.panos.panos_facts:
+      paloalto.panos.panos_op:
+        provider:
+          hostname: "{{ ansible_host }}"
+          username: "{{ ansible_user }}"
+          password: "{{ ansible_password }}"
+        cmd: "show system info"
+      register: system_info
     - name: Mostrar información de versión
       debug:
         msg: "La versión del dispositivo es: {{ device_facts.version }}"
